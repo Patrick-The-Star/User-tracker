@@ -1,0 +1,53 @@
+h2,h3{
+	text-align: center;
+	font-family: "Century Gothic";
+}
+
+button{
+	width:25%;
+	font-size: 250px;
+
+}
+
+.container{
+	position:relative;
+}
+
+
+button span{
+	font-size: 2em;
+}
+
+.row{
+	text-align:center;
+	margin-bottom: 1.5em;
+}
+
+#display{
+	font-size: 2.5em;
+	
+	text-align: center;
+	font-family: myFirstFont; 
+}
+
+#replay{
+	margin-top:-1.5em;
+}
+
+#cursor{
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:1;
+}
+
+@font-face {
+   font-family: myFirstFont;
+   src: url(Sansation_Regular.ttf);
+}
+
+@font-face {
+   font-family: mySecondFont;
+   src: url(DanDisneyUI.ttf);
+}
+
