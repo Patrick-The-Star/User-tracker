@@ -122,10 +122,7 @@
                         var events = [];
                         window.onmousemove = function(e){
 
-
-                            
                             var event = {id:"none",time:e.timeStamp,type:e.type,X:e.pageX,Y:e.pageY};
-                            
                             events.push(event);
                         };
                 
@@ -154,51 +151,29 @@
                             };
                            
                             for(var i=0;i<events.length;i++){
-
-                                
-
-                                
-                                    var tempEvent=events[i];
-                                    setTimeout((function(tempEvent){
-                                        
-                                            return function(){
-                                               
-                                                    console.log(tempEvent.id);
-                                                    $(tempEvent.id).trigger("click");
+                                var tempEvent=events[i];
+                                setTimeout((function(tempEvent){
+                                    return function(){
+                                        console.log(tempEvent.id);
+                                        $(tempEvent.id).trigger("click");
+                                        $("#cursor").css({top:(tempEvent.Y-5),left:tempEvent.X-107});
                                                     
-                                                
-                                                    $("#cursor").css({top:(tempEvent.Y-5),left:tempEvent.X-107});
-                                                    
-                                                        
+                                    }
 
-                                                
-                                        
-                                            
-                                            
-                                        
-                                        
-                                    }})(tempEvent),tempEvent.time);
-                                
-
-                                
-
+                                })(tempEvent),tempEvent.time);
+                        
                                 if(i == events.length-1){
                                     var tempTime = events[i].time+1000;
                                     setTimeout((function(tempTime){return function(){
-                                        location.reload();
-                                    }})(tempTime),tempTime);
+                                            location.reload();
+                                        }
+
+                                    })(tempTime),tempTime);
                                 }
                             }
 
-                            
-
-                            
                         }); 
 
-                       
-                        
-
-                        
                     });
 
 
